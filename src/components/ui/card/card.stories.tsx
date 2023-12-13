@@ -1,6 +1,6 @@
-// eslint-disable-next-line import/extensions
-import { Card } from '@/components/ui/card/card.tsx'
 import { Meta, StoryObj } from '@storybook/react'
+
+import { Card } from './'
 
 const meta = {
   argTypes: {},
