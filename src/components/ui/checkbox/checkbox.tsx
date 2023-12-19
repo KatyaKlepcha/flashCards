@@ -1,5 +1,6 @@
 import * as Checkbox from '@radix-ui/react-checkbox'
 import { CheckIcon } from '@radix-ui/react-icons'
+import cn from 'classnames'
 
 import s from './checkbox.module.scss'
 
@@ -29,7 +30,7 @@ export const CheckboxComponent = (props: CheckboxProps) => {
           </Checkbox.Indicator>
         </Checkbox.Root>
       </div>
-      <label className={`${s.label} ${disabled ? s.disabledLabel : ''}`} htmlFor={'c1'}>
+      <label className={cn({ [s.disabledLabel]: disabled }, s.label)} htmlFor={'c1'}>
         {label}
       </label>
     </div>

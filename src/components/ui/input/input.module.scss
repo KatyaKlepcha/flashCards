@@ -1,0 +1,125 @@
+.label {
+  color: var(--color-dark-100);
+}
+
+.disabledLabel {
+  color: var(--color-dark-300);
+}
+
+.inputWrapper {
+  position: relative;
+
+  input {
+    all: unset;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 36px;
+    padding-left: 12px;
+
+    &[type='search']::-webkit-search-cancel-button {
+      appearance: none;
+    }
+
+    &[type='search'] {
+      padding-left: 40px;
+    }
+  }
+
+  .input {
+    color: var(--color-light-100);
+    background-color: transparent;
+    border: 1px solid var(--color-dark-300);
+    border-radius: 2px;
+
+    &:active {
+      border: 1px solid var(--color-light-100);
+    }
+
+    &:hover {
+      background-color: var(--color-dark-700);
+      border: 1px solid var(--color-dark-100);
+    }
+
+    &:focus {
+      border: 2px solid var(--color-info-700);
+    }
+
+    &:disabled {
+      color: var(--color-dark-300);
+      background: transparent;
+      border: 1px solid var(--color-dark-300);
+
+      &::placeholder {
+        color: var(--color-dark-300);
+      }
+    }
+  }
+
+  .searchIcon {
+    all: unset;
+
+    position: absolute;
+    top: 9px;
+    left: 9px;
+
+    display: block;
+
+    fill: var(--color-dark-100);
+  }
+
+  .disabledIcon {
+    fill: var(--color-dark-300);
+  }
+
+  .searchIcon:has(~ .input:active) {
+    fill: var(--color-light-100);
+  }
+
+  .inputIcon {
+    all: unset;
+
+    cursor: pointer;
+
+    position: absolute;
+    top: 8px;
+    right: 0;
+
+    margin-right: 8px;
+  }
+
+  .inputError {
+    color: var(--color-danger-300);
+    border: 1px solid var(--color-danger-300);
+  }
+}
+
+.errorMessage {
+  margin-top: 2px;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-m);
+  color: var(--color-danger-300);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  background: linear-gradient(
+    top,
+    rgb(255 255 255 / 0%) 0%,
+    rgb(0 174 255 / 4%) 50%,
+    rgb(255 255 255 / 0%) 51%,
+    rgb(0 174 255 / 3%) 100%
+  );
+  border: 0;
+  box-shadow: 0 0 0 1000px transparent inset;
+
+  transition: background-color 5000s ease-in-out 0s;
+
+  -webkit-text-fill-color: var(--color-dark-100);
+}
