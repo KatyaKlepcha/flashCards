@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { enterImg } from '@/assets'
+import { EnterIcon } from '@/assets'
 
 import { Button } from './'
 
@@ -72,7 +72,7 @@ export const ButtonWithImage: Story = {
   args: {
     children: (
       <>
-        <img alt={'enter'} src={enterImg} />
+        <EnterIcon />
         Button With Image
       </>
     ),
