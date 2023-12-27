@@ -1,3 +1,4 @@
+export { ArrowSort } from './arrowSort'
 export { CloseIcon } from './closeIcon'
 export { EnterIcon } from './enterIcon'
 export { EyeIcon } from './eyeIcon'
