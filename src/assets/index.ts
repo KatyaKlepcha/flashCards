@@ -1,5 +1,8 @@
 export { ArrowSort } from './arrowSort'
+export { AvatarIcon } from './avatarIcon'
 export { CloseIcon } from './closeIcon'
 export { EnterIcon } from './enterIcon'
 export { EyeIcon } from './eyeIcon'
+export { LogOutIcon } from './logOutIcon'
+export { PersonOutlineIcon } from './personOutlineIcon'
 export { SearchIcon } from './searchIcon'
