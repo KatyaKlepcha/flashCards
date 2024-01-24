@@ -21,7 +21,7 @@ export const CheckboxStory: Story = {
       <CheckboxComponent
         {...args}
         checked={checkedValue}
-        onCheckedHandler={() => {
+        onValueChange={() => {
           setCheckedValue(!checkedValue)
         }}
       />
@@ -41,7 +41,7 @@ export const CheckboxStoryDisabled: Story = {
       <CheckboxComponent
         {...args}
         checked={checkedValue}
-        onCheckedHandler={() => {
+        onValueChange={() => {
           setCheckedValue(!checkedValue)
         }}
       />
@@ -60,7 +60,7 @@ export const CheckboxStoryWithLabel: Story = {
       <CheckboxComponent
         {...args}
         checked={checkedValue}
-        onCheckedHandler={() => {
+        onValueChange={() => {
           setCheckedValue(!checkedValue)
         }}
       />
