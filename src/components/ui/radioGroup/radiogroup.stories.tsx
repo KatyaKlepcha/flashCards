@@ -19,14 +19,14 @@ type Story = StoryObj<typeof meta>
 
 export const RadioGroupActiveStory: Story = {
   args: {
-    isDisabled: false,
+    disabled: false,
     options: users,
   },
 }
 
 export const RadioGroupNotActiveStory: Story = {
   args: {
-    isDisabled: true,
+    disabled: true,
     options: users,
   },
 }
