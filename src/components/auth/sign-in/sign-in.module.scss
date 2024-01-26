@@ -1,4 +1,4 @@
-.signInWrapper {
+.wrapper {
   display: flex;
   flex-direction: column;
   margin: 2.25rem auto 0;
@@ -11,7 +11,7 @@
   }
 
   .formWrapper {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
 
     .email {
@@ -44,7 +44,7 @@
       color: var(--color-light-100);
     }
 
-    .signUp {
+    .link {
       cursor: pointer;
 
       align-self: center;
