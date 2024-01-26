@@ -11,4 +11,4 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const ForgotPasswordStory: Story = {}
+export const CheckEmailStory: Story = {}
