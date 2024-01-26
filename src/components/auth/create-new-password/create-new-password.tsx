@@ -1,6 +1,5 @@
 import { useForm } from 'react-hook-form'
 
-import { SignInFormSchema } from '@/components/auth'
 import { Button, Card, Typography } from '@/components/ui'
 import { InputController } from '@/components/ui/controllers'
 import { DevTool } from '@hookform/devtools'
@@ -11,7 +10,7 @@ import style from '../sign-in/sign-in.module.scss'
 import s from '@/components/auth/create-new-password/create-new-password.module.scss'
 
 type CreateNewPasswordProps = {
-  onSubmit: (data: SignInFormSchema) => void
+  onSubmit: (data: CreateNewPasswordFormSchema) => void
 }
 
 export type CreateNewPasswordFormSchema = z.infer<typeof createNewPasswordSchema>
@@ -25,7 +24,7 @@ export const CreateNewPassword = ({ onSubmit }: CreateNewPasswordProps) => {
     control,
     formState: { errors },
     handleSubmit,
-  } = useForm<SignInFormSchema>({ resolver: zodResolver(createNewPasswordSchema) })
+  } = useForm<CreateNewPasswordFormSchema>({ resolver: zodResolver(createNewPasswordSchema) })
 
   return (
     <Card className={style.wrapper}>
