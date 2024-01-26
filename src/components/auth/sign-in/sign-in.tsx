@@ -31,7 +31,7 @@ export const SignIn = ({ disabled, onSubmit }: SignInProps) => {
   return (
     <>
       <DevTool control={control} />
-      <Card className={s.signInWrapper}>
+      <Card className={s.wrapper}>
         <Typography className={s.title} variant={'large'}>
           Sign In
         </Typography>
@@ -73,7 +73,7 @@ export const SignIn = ({ disabled, onSubmit }: SignInProps) => {
           <Typography as={'h4'} className={s.haveAccount} variant={'body2'}>
             Don`t have an account?
           </Typography>
-          <Typography className={s.signUp} variant={'link1'}>
+          <Typography className={s.link} variant={'link1'}>
             Sign Up
           </Typography>
         </form>
