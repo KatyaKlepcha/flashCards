@@ -1,0 +1,87 @@
+.avatarContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .avtarWrapper {
+    position: relative;
+  }
+
+  .avatar {
+    align-self: center;
+    width: 6rem;
+    height: 6rem;
+  }
+
+  label {
+    opacity: 1;
+  }
+
+  .inputFile {
+    display: none;
+  }
+
+  .changeAvatarIcon {
+    cursor: pointer;
+
+    position: absolute;
+    z-index: 2;
+    right: 10px;
+    bottom: 5px;
+
+    width: 1rem;
+    height: 1rem;
+
+    background-color: var(--color-dark-300);
+    border-radius: 0.25rem;
+  }
+
+  .errorMessage {
+    margin-top: 5px;
+
+    font-size: 0.75rem;
+    line-height: 1.5rem;
+    color: var(--color-danger-300);
+    text-align: center;
+  }
+}
+
+.editName {
+  margin: 0.75rem 0 2.25rem;
+}
+
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .editNameWrapper {
+    display: flex;
+    gap: 0.563rem;
+    align-items: center;
+
+    .name {
+      align-self: center;
+      color: var(--color-light-100);
+    }
+
+    .editIcon {
+      align-self: end;
+      padding-bottom: 2px;
+    }
+  }
+
+  .email {
+    margin-bottom: 0.81rem;
+    color: var(--color-dark-100);
+  }
+
+  .buttonLogOut {
+    display: flex;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+    width: 122px;
+    height: 36px;
+  }
+}
