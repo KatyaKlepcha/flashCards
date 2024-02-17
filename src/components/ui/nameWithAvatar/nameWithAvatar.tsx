@@ -1,6 +1,6 @@
 import { Avatar } from '@/components'
 
-import s from './name-with-avatar.module.scss'
+import s from './nameWithAvatar.module.scss'
 
 type Props = {
   avatar: string
