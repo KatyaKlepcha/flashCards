@@ -1,0 +1,11 @@
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+
+  width: 100%;
+  height: 3.75rem;
+  padding: 0 8.5rem;
+
+  background: var(--color-dark-700);
+}
