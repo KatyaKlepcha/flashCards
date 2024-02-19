@@ -16,10 +16,11 @@
 
       cursor: pointer;
       user-select: none;
-
-      padding: 6px 24px;
-
+      line-height: var(--line-height-m);
       color: var(--color-light-100);
+
+      min-width: 3.056rem;
+      padding: 6px 24px;
 
       background-color: transparent;
       border: 1px solid var(--color-dark-300);
