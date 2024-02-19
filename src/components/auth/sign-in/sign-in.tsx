@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form'
+import { Link } from 'react-router-dom'
 
 import { Button, Card, Typography } from '@/components/ui'
 import { CheckboxController, InputController } from '@/components/ui/controllers'
@@ -60,9 +61,9 @@ export const SignIn = ({ disabled, onSubmit }: SignInProps) => {
             name={'rememberMe'}
           />
           <Typography
-            // as={Link}
-            // to={'/forgot-password'}
+            as={Link}
             className={s.forgotPassword}
+            to={'/forgot-password'}
             variant={'body2'}
           >
             Forgot Password?
@@ -73,7 +74,7 @@ export const SignIn = ({ disabled, onSubmit }: SignInProps) => {
           <Typography as={'h4'} className={s.haveAccount} variant={'body2'}>
             Don`t have an account?
           </Typography>
-          <Typography className={s.link} variant={'link1'}>
+          <Typography as={Link} className={s.link} to={'/sign-up'} variant={'link1'}>
             Sign Up
           </Typography>
         </form>
