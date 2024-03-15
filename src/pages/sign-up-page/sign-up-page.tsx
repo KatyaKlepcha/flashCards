@@ -3,7 +3,7 @@ import { toast } from 'react-toastify'
 
 import { SignUp, SignUpFormSchema } from '@/components'
 import { errorOptions } from '@/pages/common'
-import { LoadingSpinner } from '@/pages/common/spinner/loading-spinner'
+import { LoadingSpinner } from '@/pages/common/spinners/loading-spinner'
 import { useMeQuery, useSignUpMutation } from '@/services/auth/auth.service'
 
 export const SignUpPage = () => {

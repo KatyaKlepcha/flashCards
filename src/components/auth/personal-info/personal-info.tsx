@@ -11,7 +11,7 @@ import style from '../sign-in/sign-in.module.scss'
 import s from '@/components/auth/personal-info/personal-info.module.scss'
 
 type PersonalInfoProps = {
-  avatar?: string
+  avatar?: null | string
   email: string
   name: string
   onChangeAvatar?: (avatar: File) => void

@@ -55,12 +55,22 @@ button {
   gap: 6px;
   align-items: center;
 
+  margin: 10px 0;
+
   font-size: var(--font-size-xs);
   line-height: var(--line-height-s);
   color: var(--color-light-100);
   text-decoration: none;
 
   outline: none;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:nth-child(5) {
+    margin-bottom: 0;
+  }
 }
 
 .separator {

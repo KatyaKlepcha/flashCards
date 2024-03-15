@@ -3,7 +3,7 @@ import defaultAvatar from '@/assets/image/defaultAvatar.svg'
 import s from './avatar.module.scss'
 
 type Props = {
-  avatar?: string
+  avatar?: null | string
   className?: string
   size?: number
 }

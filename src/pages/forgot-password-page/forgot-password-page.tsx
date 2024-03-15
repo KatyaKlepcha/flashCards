@@ -2,7 +2,7 @@ import { Navigate, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
 import { ForgotPassword, ForgotPasswordFormSchema } from '@/components'
-import { LoadingSpinner } from '@/pages/common/spinner/loading-spinner'
+import { LoadingSpinner } from '@/pages/common/spinners/loading-spinner'
 import { errorOptions } from '@/pages/common/tostify-options/tostify-options'
 import { useMeQuery, useRecoverPasswordMutation } from '@/services/auth/auth.service'
 

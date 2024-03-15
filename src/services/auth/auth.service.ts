@@ -1,4 +1,5 @@
 import {
+  AuthResponse,
   ConfirmPasswordArgs,
   LoginArgs,
   RecoverPasswordArgs,
@@ -25,6 +26,31 @@ const authService = baseApi.injectEndpoints({
           }
         },
       }),
+      logout: builder.mutation<void, void>({
+        invalidatesTags: ['Me'],
+        async onQueryStarted(_, { dispatch, queryFulfilled }) {
+          const patchResult = dispatch(
+            authService.util.updateQueryData('me', undefined, () => {
+              return null
+            })
+          )
+
+          try {
+            await queryFulfilled
+          } catch {
+            patchResult.undo()
+
+            /**
+             * Alternatively, on failure you can invalidate the corresponding cache tags
+             * to trigger a re-fetch:
+             * dispatch(api.util.invalidateTags(['Post']))
+             */
+          }
+        },
+        query: () => {
+          return { method: 'POST', url: `v1/auth/logout` }
+        },
+      }),
       me: builder.query<User, void>({
         providesTags: ['Me'],
         query: () => {
@@ -41,6 +67,12 @@ const authService = baseApi.injectEndpoints({
           return { body: { ...args }, method: 'POST', url: `v1/auth/sign-up` }
         },
       }),
+      updateMe: builder.mutation<AuthResponse, FormData>({
+        invalidatesTags: ['Me'],
+        query: args => {
+          return { body: args, method: 'PATCH', url: `v1/auth/me` }
+        },
+      }),
     }
   },
 })
@@ -48,7 +80,9 @@ const authService = baseApi.injectEndpoints({
 export const {
   useConfirmPasswordMutation,
   useLoginMutation,
+  useLogoutMutation,
   useMeQuery,
   useRecoverPasswordMutation,
   useSignUpMutation,
+  useUpdateMeMutation,
 } = authService

@@ -3,7 +3,7 @@ import { Avatar } from '@/components'
 import s from './nameWithAvatar.module.scss'
 
 type Props = {
-  avatar: string
+  avatar?: null | string
   name: string
 }
 export const NameWithAvatar = ({ avatar, name }: Props) => {

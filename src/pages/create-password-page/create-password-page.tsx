@@ -3,7 +3,7 @@ import { toast } from 'react-toastify'
 
 import { CreateNewPassword, CreateNewPasswordFormSchema } from '@/components'
 import { errorOptions, successOptions } from '@/pages/common'
-import { LoadingSpinner } from '@/pages/common/spinner/loading-spinner'
+import { LoadingSpinner } from '@/pages/common/spinners/loading-spinner'
 import { useConfirmPasswordMutation, useMeQuery } from '@/services/auth/auth.service'
 
 export const CreatePasswordPage = () => {
