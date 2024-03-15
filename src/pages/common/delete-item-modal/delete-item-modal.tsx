@@ -4,7 +4,7 @@ import { toast } from 'react-toastify'
 import { Button, Typography } from '@/components'
 import { Modal } from '@/components/ui/modal'
 import { errorOptions, successOptions } from '@/pages'
-import { useDeleteDeckByIdMutation } from '@/services'
+import { useDeleteCardMutation, useDeleteDeckByIdMutation } from '@/services'
 
 import s from './delete-item-modal.module.scss'
 
@@ -28,34 +28,33 @@ export const DeleteItemModal = ({
   title,
 }: Props) => {
   const navigate = useNavigate()
-  // const [deleteCard] = useDeleteCardMutation()
+  const [deleteCard] = useDeleteCardMutation()
   const [deleteDeck] = useDeleteDeckByIdMutation()
-  const deleteHandler = () => {
-    if (title === 'Delete Pack') {
-      deleteDeck({ id })
-        .unwrap()
-        .then(data => {
-          toast.success(`Pack ${data.name} deleted successfully`, successOptions)
-        })
-        .catch(() => {
-          toast.error('Pack not found', errorOptions)
-        })
+
+  const deleteHandler = async () => {
+    try {
+      if (title === 'Delete Pack') {
+        const data = await deleteDeck({ id }).unwrap()
+
+        toast.success(`Pack ${data.name} deleted successfully`, successOptions)
+      } else {
+        await deleteCard({ id }).unwrap()
+        toast.success(`Your card deleted successfully`, successOptions)
+      }
+    } catch (error) {
+      if (title === 'Delete Pack') {
+        toast.error('Pack not found', errorOptions)
+      } else {
+        toast.error('Card not found', errorOptions)
+      }
+    } finally {
       setIsModalOpen(false)
       if (isNavigate) {
         navigate(-1)
       }
-    } else {
-      // deleteCard({ id })
-      //   .unwrap()
-      //   .then(() => {
-      //     toast.success(`Your card deleted successfully`, successOptions)
-      //   })
-      //   .catch(() => {
-      //     toast.error('Card not found', errorOptions)
-      //   })
-      setIsModalOpen(false)
     }
   }
+
   const isDeck = title === 'Delete Pack'
 
   return (

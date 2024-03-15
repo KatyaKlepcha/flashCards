@@ -1,0 +1,27 @@
+.menuContainer {
+  margin-bottom: 2.25rem;
+
+  .titleWrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .title {
+      color: var(--color-light-100);
+    }
+  }
+
+  .filterBlock {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    width: 100%;
+    margin-top: 34px;
+
+    .resetIcon {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+  }
+}

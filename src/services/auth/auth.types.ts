@@ -12,7 +12,7 @@ export type User = {
   isEmailVerified: boolean
   name: string
   updated: string
-}
+} | null
 
 export type SignUpRequestArgs = {
   email: string
@@ -22,6 +22,16 @@ export type SignUpRequestArgs = {
   sendConfirmationEmail?: boolean
   subject?: string
 }
+
+export type AuthResponse = {
+  avatar: string
+  created: string
+  email: string
+  id: string
+  isEmailVerified: boolean
+  name: string
+  updated: string
+} | null
 
 export type RecoverPasswordArgs = Pick<SignUpRequestArgs, 'email' | 'html' | 'subject'>
 export type ConfirmPasswordArgs = {
