@@ -1,1 +1,1 @@
-export * from './cards.service.ts'
+export * from './cards.service'

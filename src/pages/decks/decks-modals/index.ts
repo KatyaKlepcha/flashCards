@@ -1,1 +1,1 @@
-export * from './deck-modal.tsx'
+export * from './deck-modal'
