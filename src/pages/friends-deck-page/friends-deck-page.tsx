@@ -63,12 +63,12 @@ export const FriendsDeckPage = () => {
     isLoading: isGettingCardsLoading,
   } = useGetDeckCardsByIdQuery({
     currentPage,
-    id,
+    id: id ?? '',
     itemsPerPage,
     orderBy: sortedString,
     question: debouncedSearchValue,
   })
-  const { data: deckData, isLoading } = useGetDeckByIdQuery({ id })
+  const { data: deckData, isLoading } = useGetDeckByIdQuery({ id: id ?? '' })
   const totalPages = data?.pagination.totalPages || 1
 
   if (deckData?.cardsCount === 0) {

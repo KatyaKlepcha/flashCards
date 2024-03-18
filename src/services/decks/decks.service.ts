@@ -194,15 +194,6 @@ const decksService = baseApi.injectEndpoints({
                 orderBy,
               },
               draft => {
-                // console.log(args)
-                // const ind = draft.items.findIndex(item => item.id === id)
-                //
-                // draft.items[ind] = {
-                //   ...draft.items[ind],
-                //   //cover: args.cover,
-                //   isPrivate: args.isPrivate,
-                //   name: args.name,
-                // }
                 const deck = draft.items.find(deck => deck.id === id)
 
                 if (deck) {
