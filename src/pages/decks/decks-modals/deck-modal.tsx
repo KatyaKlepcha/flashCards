@@ -67,28 +67,20 @@ export const DeckModal = ({
 
   const onSubmit: SubmitHandler<PackFormSchema> = async data => {
     try {
-      const formData = new FormData()
-      const isPackPrivate = data.isPackPrivate ? 'true' : 'false'
-
-      if (!coverError) {
-        formData.append('cover', data.cover[0])
+      const newDeck = {
+        cover: !coverError && data.cover[0],
+        isPrivate: data.isPackPrivate,
+        name: data.name,
       }
-      formData.append('name', data.name)
-      formData.append('isPrivate', isPackPrivate)
 
       if (modalTitle === 'Add New Deck') {
-        const createdDeck = await createDeck(formData).unwrap()
+        const createdDeck = await createDeck(newDeck).unwrap()
 
         toast.success(`Pack ${createdDeck.name} created successfully`, successOptions)
         dispatch(setCurrentPage(1))
         dispatch(setDeckName(''))
       } else {
-        await updateDeck({
-          cover: !coverError && data.cover[0],
-          id,
-          isPrivate: data.isPackPrivate,
-          name: data.name,
-        }).unwrap()
+        await updateDeck({ ...newDeck, id }).unwrap()
 
         toast.success(`Pack ${data.name} updated successfully`, successOptions)
       }
@@ -154,7 +146,6 @@ export const DeckModal = ({
       <form className={s.modalForm} onSubmit={handleSubmit(onSubmit)}>
         <InputWithTypeFile
           errorMessage={coverError}
-          //handleFileChange={handleFileChange}
           handleFileChange={handleImageChange}
           imageSrc={imgSrc}
           name={'cover'}
@@ -167,7 +158,6 @@ export const DeckModal = ({
           {...register('name')}
           errorMessage={errors.name?.message}
           onChange={setEditName}
-          //value={addDeckName}
           value={inputValue}
         />
 
