@@ -64,10 +64,6 @@ export const TableHeader = ({
       return onSort({ direction: 'asc', key })
     }
 
-    if (sort.direction === 'desc') {
-      return onSort(null)
-    }
-
     return onSort({
       direction: sort?.direction === 'asc' ? 'desc' : 'asc',
       key,
