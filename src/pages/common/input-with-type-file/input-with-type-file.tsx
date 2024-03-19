@@ -10,8 +10,6 @@ type InputProps = {
   handleFileChange: (e: ChangeEvent<HTMLInputElement>) => void
   imageSrc?: null | string
   name: string
-  //register: UseFormRegister<FieldValues>
-  //register: UseFormRegister<{ name: string; isPackPrivate: boolean; cover?: any }>
   register: any
 }
 export const InputWithTypeFile = ({
@@ -26,7 +24,6 @@ export const InputWithTypeFile = ({
       {imageSrc && <img alt={'image'} className={s.coverPreview} src={imageSrc} />}
       <div className={s.inputFileWrapper}>
         <div className={s.changeCover}>
-          {/*<img alt={'picture'} src={imageIcon} />*/}
           <UploadFileIcon />
           <Typography as={'span'} variant={'subtitle2'}>
             Change Cover

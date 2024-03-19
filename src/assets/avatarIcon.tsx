@@ -7,7 +7,6 @@ export const AvatarIcon = ({ className }: { className?: string }) => {
       viewBox={'0 0 36 36'}
       width={'36'}
       xmlns={'http://www.w3.org/2000/svg'}
-      // xmlns:xlink={'http://www.w3.org/1999/xlink'}
     >
       <circle cx={'18'} cy={'18'} fill={'url(#pattern0)'} id={'Ellipse 54'} r={'18'} />
       <defs>

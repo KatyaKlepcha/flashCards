@@ -14,7 +14,6 @@ export const ForgotPasswordPage = () => {
     try {
       await recoverPassword({
         email: data.email,
-        // html: '<h1>Hi, ##name##</h1><p>Click <a href="https://smart-cards-7sxyig9bd-letsgomaan.vercel.app/confirm-email/##token##">here</a> to recover your password</p>',
         html: '<h1>Hi, ##name##</h1><p>Click <a href="https://smart-cards.vercel.app/confirm-email/##token##">here</a> to recover your password</p>',
       })
       navigate('/check-email')
