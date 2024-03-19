@@ -130,19 +130,3 @@ export type SaveCardRating = {
   grade: number
   id?: string
 }
-
-export type SaveCardRatingResponse = {
-  answer: string
-  answerImg: string
-  answerVideo: string
-  created: string
-  deckId: string
-  grade: number
-  id: string
-  question: string
-  questionImg: string
-  questionVideo: string
-  shots: number
-  updated: string
-  userId: string
-}
